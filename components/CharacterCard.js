@@ -9,11 +9,14 @@ const CharacterCard = ({ character }) => {
   return (
     <TouchableOpacity
       style={tw`bg-white rounded-lg shadow p-4 mb-4 flex-row items-center`}
-      onPress={() => navigation.navigate('CharacterDetail', { id: character.id })}
+      onPress={() =>
+        navigation.navigate('CharacterDetail', { id: character.id })
+      }
     >
       <Image
         source={{ uri: character.image }}
-        style={tw`w-16 h-16 rounded-full mr-4`}
+        style={tw`w-16 h-16 mr-4`}
+        resizeMode="contain"
       />
       <View>
         <Text style={tw`text-lg font-bold`}>{character.name}</Text>
