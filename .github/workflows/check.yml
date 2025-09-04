@@ -10,3 +10,6 @@ jobs:
     steps:
       - name: dame la fecha
         run: date
+      - name: say hello
+        run: |
+          echo "Hello, world!"
