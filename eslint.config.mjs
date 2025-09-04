@@ -8,8 +8,12 @@ export default defineConfig([
     files: ['**/*.{js,mjs,cjs,jsx}'],
     plugins: { js },
     extends: ['js/recommended'],
-    languageOptions: { globals: globals.browser },
-    env: { node: true },
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.node, // ✅ instead of `env: { node: true }`
+      },
+    },
     rules: {
       'react/prop-types': 'off',
     },
