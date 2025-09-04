@@ -18,6 +18,7 @@ const CharacterDetailScreen = ({ route }) => {
       })
       .catch((err) => {
         setError('Failed to load character details');
+        console.log(err);
         setLoading(false);
       });
   }, [id]);

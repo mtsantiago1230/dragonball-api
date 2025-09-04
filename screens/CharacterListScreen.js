@@ -10,13 +10,15 @@ const CharacterListScreen = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get('https://dragonball-api.com/api/characters')
-      .then(res => {
+    axios
+      .get('https://dragonball-api.com/api/characters')
+      .then((res) => {
         setCharacters(res.data.items || res.data);
         setLoading(false);
       })
-      .catch(err => {
+      .catch((err) => {
         setError('Failed to load characters');
+        console.log(err);
         setLoading(false);
       });
   }, []);
@@ -33,7 +35,7 @@ const CharacterListScreen = () => {
     <View style={tw`flex-1 bg-gray-100 p-4`}>
       <FlatList
         data={characters}
-        keyExtractor={item => item.id.toString()}
+        keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => <CharacterCard character={item} />}
       />
     </View>
