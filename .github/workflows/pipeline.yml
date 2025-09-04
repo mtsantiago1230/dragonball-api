@@ -16,6 +16,8 @@ jobs:
         with:
           node-version: 'latest'
       - name: Install dependencies
-        run: npm install
+        run: npm install --no-fund --no-optional
       - name: run eslint
         run: npm run eslint
+      - name: Build project
+        run: npm run build
