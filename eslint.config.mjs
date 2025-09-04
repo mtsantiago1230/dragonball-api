@@ -11,7 +11,12 @@ export default defineConfig([
     languageOptions: {
       globals: {
         ...globals.browser,
-        ...globals.node, // ✅ instead of `env: { node: true }`
+        ...globals.node,
+      },
+    },
+    settings: {
+      react: {
+        version: 'detect',
       },
     },
     rules: {
